@@ -34,7 +34,7 @@ RUN \
     
 RUN \
     mkdir -p ${HOME}/php-default-conf && \
-    cp -R /etc/local/etc/* ${HOME}/php-default-conf
+    cp -R /usr/local/etc/* ${HOME}/php-default-conf
     
 ADD ["./docker-entrypoint.sh", "${HOME}/"]
 
