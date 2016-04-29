@@ -31,12 +31,12 @@ RUN \
     apt-get clean && \
     rm -rf ${HOME}/cphalcon && \
     rm -rf /var/lib/apt/list/*
-    
+
 RUN \
     mkdir -p ${HOME}/php-default-conf && \
     cp -R /usr/local/etc/* ${HOME}/php-default-conf
-    
-ADD ["./docker-entrypoint.sh", "${HOME}/"]
+
+ADD ["./docker-entrypoint.sh", "/root/"]
 
 VOLUME ["/var/www", "/usr/local/etc"]
 
