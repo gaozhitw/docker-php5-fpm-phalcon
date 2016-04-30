@@ -9,8 +9,11 @@ RUN \
 RUN \
     cd ${HOME} && \
     git clone git://github.com/phalcon/cphalcon.git && \
-    cd cphalcon/build && \
-    ./install
+    cd cphalcon/build/64bits && \
+    phpize && \
+    ./configure CFLAGS="-O2 -g -fomit-frame-pointer -DPHALCON_RELEASE" && \
+    make && \
+    make install
 
 RUN docker-php-ext-enable phalcon.so
 
