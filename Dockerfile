@@ -27,6 +27,10 @@ RUN \
     docker-php-ext-install pdo_mysql mbstring sockets gd opcache exif
 
 RUN \
+    pecl install redis && \
+    docker-php-ext-enable redis.so
+
+RUN \
     apt-get update && \
     apt-get install -y libmcrypt-dev && \
     docker-php-ext-configure mcrypt && \
