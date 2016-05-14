@@ -28,7 +28,8 @@ RUN \
 
 RUN \
     pecl install redis && \
-    docker-php-ext-enable redis.so
+    docker-php-ext-enable redis.so && \
+    pecl clear-cache
 
 RUN \
     apt-get update && \
