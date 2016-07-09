@@ -27,7 +27,7 @@ RUN \
     docker-php-ext-install pdo_mysql mbstring sockets gd opcache exif
 
 RUN \
-    pecl install redis && \
+    pecl install redis-2.2.8 && \
     docker-php-ext-enable redis.so && \
     pecl clear-cache
 
