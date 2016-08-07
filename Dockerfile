@@ -9,7 +9,9 @@ RUN \
 RUN \
     cd ${HOME} && \
     git clone git://github.com/phalcon/cphalcon.git && \
-    cd cphalcon/build/64bits && \
+    cd cphalcon && \
+    git checkout tags/phalcon-v2.0.13 && \
+    cd build/64bits && \
     phpize && \
     ./configure CFLAGS="-O2 -g -fomit-frame-pointer -DPHALCON_RELEASE" && \
     make && \
